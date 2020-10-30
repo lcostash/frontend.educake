@@ -2,12 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Frontend</title>
+  <title>Educake tech test</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+<app-root>
+  <style type="text/css">
+    body {
+      background-color: #ffffff;
+    }
+
+    .container {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      left: calc(50% - 25px);
+      top: calc(50% - 25px);
+      background: transparent url('/assets/logo-color.svg') center center no-repeat;
+      z-index: 10002;
+    }
+  </style>
+  <div class="container"></div>
+</app-root>
 </body>
 </html>

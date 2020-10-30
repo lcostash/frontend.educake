@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  app: {
+    ajax: {
+      url: 'http://localhost',
+      cache: true
+    },
+    format: {
+      dateTime: 'd MMM y HH:mm'
+    },
+    store: 'educake.one',
+    version: '0.0.1'
+  }
 };
 
 /*
