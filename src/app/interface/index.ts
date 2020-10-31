@@ -3,5 +3,6 @@ export * from './ajax-response.interface';
 export * from './ajax-store.interface';
 export * from './auth.interface';
 export * from './auth-response.interface';
+export * from './factor.interface';
 export * from './field-message.interface';
 export * from './intensity.interface';

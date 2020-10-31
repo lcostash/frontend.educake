@@ -52,10 +52,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.auth = this.authService.getAuth;
-    this.shareService.doAction('intensity', AjaxActionEnum.View, {}).subscribe((response: AjaxResponseInterface) => {
-      this.intensity = (response.rows ? response.rows[0] : {}) as IntensityInterface;
-    }, () => {
-    });
+    this.shareService.doAction('intensity', AjaxActionEnum.View, {}).subscribe(
+      (response: AjaxResponseInterface) => {
+        this.intensity = (response.rows ? response.rows[0] : {}) as IntensityInterface;
+      }, () => {
+      }
+    );
   }
 
   ngOnDestroy(): void {

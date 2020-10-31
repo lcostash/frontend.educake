@@ -181,8 +181,13 @@ textarea {
 
 .bg-guest-area {
   min-height: 70vh;
+  background-image: linear-gradient(rgba($black, .3), rgba($black, .5));
 }
 
 .form-check-input {
   margin-top: 0;
+}
+
+.table {
+  color: inherit;
 }

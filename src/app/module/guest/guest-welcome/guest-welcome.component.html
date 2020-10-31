@@ -1,8 +1,36 @@
 <div class="container bg-guest-area">
   <div class="row">
-    <div class="bg-guest-area col d-flex justify-content-center align-items-center">
+    <div class="col d-flex justify-content-center align-items-start">
 
-
+      <div class="col-12 col-sm-9">
+        <h5 class="py-3">Get Carbon Intensity data for today</h5>
+        <table class="table table-sm">
+          <thead>
+          <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Value</th>
+          </tr>
+          </thead>
+          <tbody>
+          <ng-template ngFor let-row [ngForOf]="rows">
+            <tr *ngIf="row.intensity.actual">
+              <td>{{row.from|localizedDate:dateTime}}</td>
+              <td>{{row.to|localizedDate:dateTime}}</td>
+              <td><span class="text-primary">{{row.intensity.actual|number}}</span>&nbsp;gCO2/kWh</td>
+            </tr>
+          </ng-template>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 col-sm-3">
+        <h5 class="py-3">Get Carbon Intensity factors for each fuel type</h5>
+        <ul class="list-unstyled">
+          <ng-template ngFor let-factor [ngForOf]="factors">
+            <li>{{factor.name}}&nbsp;<span class="text-primary">{{factor.value}}</span>&nbsp;gCO2/kWh</li>
+          </ng-template>
+        </ul>
+      </div>
 
     </div>
   </div>
