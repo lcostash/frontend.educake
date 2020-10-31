@@ -21,13 +21,4 @@ export class GuestWelcomeComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
-  /**
-   * @since 0.0.1
-   * @return void
-   */
-  public addMessage(): void {
-    this.action.isBusy = true;
-
-  }
 }

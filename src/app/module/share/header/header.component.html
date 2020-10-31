@@ -1,9 +1,11 @@
 <header class="container">
   <div class="row">
-    <div class="col d-flex justify-content-center py-3">
+    <div class="col d-flex justify-content-between py-3">
       <a routerLink="/" tabindex="0" aria-disabled="true" class="align-self-center">
         <img src="../../../../assets/logo-white.svg" alt="" height="100" width="100"/>
       </a>
+      <p class="align-self-center">Current Carbon Intensity is <span
+        class="text-primary">{{intensity?.intensity?.actual}}</span> gCO2/kWh</p>
     </div>
   </div>
 </header>

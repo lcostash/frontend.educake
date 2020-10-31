@@ -3,9 +3,9 @@ import {Router} from '@angular/router';
 import {BsModalService} from 'ngx-bootstrap/modal';
 import {Subscription} from 'rxjs';
 import {AuthService, ShareService} from '../../../service';
-import {AjaxResponseInterface, AuthInterface} from 'src/app/interface';
+import {AjaxResponseInterface, AuthInterface, IntensityInterface} from 'src/app/interface';
 import {ToastrService} from 'ngx-toastr';
-import {UserRoleEnum} from '../../../enum';
+import {AjaxActionEnum, UserRoleEnum} from '../../../enum';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +14,7 @@ import {UserRoleEnum} from '../../../enum';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   public auth: AuthInterface;
+  public intensity: IntensityInterface;
   private readonly authSubscription: Subscription;
   private readonly messageSubscription: Subscription;
 
@@ -51,6 +52,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.auth = this.authService.getAuth;
+    this.shareService.doAction('intensity', AjaxActionEnum.View, {}).subscribe((response: AjaxResponseInterface) => {
+      this.intensity = (response.rows ? response.rows[0] : {}) as IntensityInterface;
+    }, () => {
+    });
   }
 
   ngOnDestroy(): void {
