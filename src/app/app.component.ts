@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {AuthService} from './service';
+import {AjaxStoreInterface} from './interface';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'frontend';
+  /**
+   * @param authService AuthService
+   */
+  constructor(private authService: AuthService) {
+    // check if token is valid
+    const ajaxStore: AjaxStoreInterface = AuthService.getStore();
+    if (ajaxStore && ajaxStore.token.length !== 0) {
+      this.authService.checkMe().then(() => this.authService.AuthSubject.next()).catch();
+    }
+  }
 }
