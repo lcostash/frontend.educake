@@ -4,8 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Setup
 
-1) Before run deployment server on local machine, please, get first API for this project from [here](https://github.com/lcostash/api.educake).
-2) After that change `environment.ts` file `app.ajax.url` option with yours. 
+0) get the project from git on local folder with name `educake`
+1) go to inside of `educake`, you must to see package.json file
+2) run cmd terminal and run next command `npm install` to install required packages and press enter
+3) before run deployment server on local machine, please, get first API for this project from [here](https://github.com/lcostash/api.educake).
+4) after that change `environment.ts` file `app.ajax.url` option with yours. 
 
 ## Development server
 
